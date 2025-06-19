@@ -1,27 +1,29 @@
 {
   "compilerOptions": {
-    "target": "es2018",
-    "module": "esnext",
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
+    "baseUrl": "src",
+    "target": "es5",
+    //    "lib": [
+    //      "dom",
+    //      "dom.iterable",
+    //      "esnext"
+    //    ],
     "forceConsistentCasingInFileNames": true,
+    "allowJs": true,
+    //    "skipLibCheck": true,
+    "esModuleInterop": true,
+
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    //    "forceConsistentCasingInFileNames": true,
+    //    "noFallthroughCasesInSwitch": true,
+    "module": "ESNext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "outDir": "dist",
-    "jsx": "react-jsx",
-    "baseUrl": "src",
-    "paths": {
-      "@components/*": ["components/*"],
-      "@pages/*": ["pages/*"],
-      "@hooks/*": ["hooks/*"],
-      "@utils/*": ["utils/*"]
-    }
+    "isolatedModules": false,
+    "noEmit": true,
+    "jsx": "react-jsx"
   },
   "include": [
     "src"
-  ],
-  "ts-node": {
-    "require": ["tsconfig-paths/register"]
-  }
+  ]
 }

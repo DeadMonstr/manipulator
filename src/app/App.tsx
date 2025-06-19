@@ -1,26 +1,38 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import ManipulatorApp from "pages/manipulator/ManipulatorInterface";
+import StoreProvider from "app/store/ui/StoreProvider";
+import {useSelector} from "react-redux";
+import {getAuth} from "entity/user/model/userSelector";
+import Login from "pages/login/login";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    const auth = useSelector(getAuth)
+
+
+
+    return (
+        <>
+
+
+            {
+                !auth ?
+                    <Login/>
+                    :
+                    <ManipulatorApp/>
+            }
+
+
+
+
+
+
+
+        </>
+
+    );
 }
+
+
 
 export default App;
